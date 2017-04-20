@@ -4,7 +4,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { APP_BASE_HREF } from '@angular/common';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './_components/login/login.component';
@@ -23,7 +23,8 @@ describe('AppComponent', () => {
       ],
       imports : [
         HttpModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
       ],
       providers: [
       {provide: APP_BASE_HREF, useValue : '/' }
@@ -38,12 +39,12 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  /*it(`should have as title 'app works!'`, async(() => {
+  it(`should have as title 'Card app!'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
+    expect(app.title).toEqual('Card app');
   }));
-
+  /*
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
