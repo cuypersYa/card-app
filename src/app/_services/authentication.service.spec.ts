@@ -9,7 +9,18 @@ describe('AuthenticationService', () => {
   // global variable
   let username='test@test.be';
   let pass='pass';
-  let user=new User(username,pass,true);
+  let values= {
+              name:'Yannick Cuypers',
+              address: {
+                  street:'Bund',
+                  number:'29',
+                  zipcode: '2180',
+                  city:'Ekeren'
+              },
+              bio:'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... ',
+              points:780
+          }
+  let user=new User(username,pass,values,true);
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -35,3 +46,4 @@ describe('AuthenticationService', () => {
   }));
 
 });
+
