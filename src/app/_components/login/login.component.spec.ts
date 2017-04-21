@@ -18,7 +18,7 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
       imports: [ AppRoutingModule,HttpModule,FormsModule ],
       declarations: [ LoginComponent,CardComponent ],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }]      ]
+      providers: [{provide: APP_BASE_HREF, useValue : '/' }] 
     })
     .compileComponents();
   }));
