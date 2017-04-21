@@ -2,13 +2,121 @@
 
 @import '~font-awesome/less/font-awesome';
 @import '~bootstrap/less/bootstrap.less';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+/**
+* definitions
+*/
+
+// colors
+@bleu:#0077B2;
+@white:#fff;
+@bg-white:#F1F1F1;
+@gray:#808080;
+@font-general:'Open Sans', 'sans-serif';
 
 .noFocus() {
   border:none !important;
   outline:none !important;
 }
+
+/**
+* CSS
+*/
 .btn {
   &:focus, &:active {
     .noFocus();
   }
 }
+
+*{
+    font-family: @font-general;
+}
+
+.well {
+    margin-top:-20px;
+    background-color:#007FBD;
+    border:2px solid @bleu;
+    text-align:center;
+    cursor:pointer;
+    font-size: 25px;
+    padding: 15px;
+    border-radius: 0px !important;
+}
+
+.well:hover {
+    margin-top:-20px;
+    background-color:@bleu;
+    border:2px solid @bleu;
+    text-align:center;
+    cursor:pointer;
+    font-size: 25px;
+    padding: 15px;
+    border-radius: 0px !important;
+    border-bottom : 2px solid rgba(97, 203, 255, 0.65);
+}
+
+body {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 14px;
+line-height: 1.42857143;
+color: @white;
+background-color: @bg-white;
+}
+
+
+
+.bg_blur
+{
+    background-image:url('http://data2.whicdn.com/images/139218968/large.jpg');
+    height: 300px;
+    background-size: cover;
+}
+
+
+.header{
+    color : @gray;
+    margin-top:20px;
+}
+
+.picture{
+    height:150px;
+    width:150px;
+    margin: 5px;
+}
+
+.picture_mob{
+    position: absolute;
+    width: 35%;
+    left: 35%;
+    bottom: 70%;
+}
+
+.btn-style{
+    color: @white;
+    background-color: #007FBE;
+    border-color: #adadad;
+    width: 33.3%;
+}
+
+.btn-style:hover {
+    color: #333;
+    background-color: #3D5DE0;
+    border-color: #adadad;
+    width: 33.3%;
+   
+}
+
+
+@media (max-width: 767px) {
+    .header{
+        text-align : center;
+        margin: auto;
+    }
+    
+    
+    
+    .nav{
+        margin-top : 30px;
+    }
+}
+

@@ -11,7 +11,10 @@ import { User } from '../../_class/user';
   providers: [AuthenticationService]
 })
 export class LoginComponent implements OnInit {
-  model: any = {};
+  model= {
+    username: '',
+    password: ''
+  };
   newUser: User ;
   loading = false;
   returnUrl: string;
@@ -29,22 +32,22 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.authenticationService.logout();
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    console.log("test", this.model);
   }
   login(){
     this.loading=true;
-    console.log("model", this.model);
-    if (typeof this.model.username !== 'undefined' && typeof this.model.password !== 'undefined'){
-       this.authenticationService.login(this.model.username,this.model.password);
+    if ( this.model.username !== '' &&  this.model.password !== ''){
+      this.authenticationService.login(this.model.username,this.model.password);
+      this.loading=false;
+      this.router.navigateByUrl('/card');
+    
     }else{
       this.error = {
         status:true,
         msg: 'Wrong credentials'
       }
+      this.loading=false;
     }
    
-    this.loading=false;
-    this.router.navigateByUrl('/card');
     
   }
 
