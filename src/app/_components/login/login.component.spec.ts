@@ -9,7 +9,7 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { LoginComponent } from './login.component';
 import { CardComponent } from '../card/card.component';
-
+ 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
@@ -18,7 +18,7 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
       imports: [ AppRoutingModule,HttpModule,FormsModule ],
       declarations: [ LoginComponent,CardComponent ],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }]      ]
+      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
     })
     .compileComponents();
   }));

@@ -33,18 +33,20 @@ export class LoginComponent implements OnInit {
   }
   login(){
     this.loading=true;
-    console.log("model", this.model);
+    console.log("model", this.model.username);
     if (typeof this.model.username !== 'undefined' && typeof this.model.password !== 'undefined'){
        this.authenticationService.login(this.model.username,this.model.password);
+       this.loading=false;
+       this.router.navigateByUrl('/card');
     }else{
       this.error = {
         status:true,
         msg: 'Wrong credentials'
       }
+      this.loading=false;
     }
    
-    this.loading=false;
-    this.router.navigateByUrl('/card');
+    
     
   }
 
