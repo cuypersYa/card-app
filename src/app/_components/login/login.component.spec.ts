@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from '../../app.routes';
 import { APP_BASE_HREF } from '@angular/common';
 
+import {AuthenticationService} from '../../_services/authentication.service';
 import { LoginComponent } from './login.component';
 import { CardComponent } from '../card/card.component';
  
@@ -18,8 +19,7 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
       imports: [ AppRoutingModule,HttpModule,FormsModule ],
       declarations: [ LoginComponent,CardComponent ],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }] 
-
+      providers: [{provide: APP_BASE_HREF, useValue : '/' },AuthenticationService] 
     })
     .compileComponents();
   }));
