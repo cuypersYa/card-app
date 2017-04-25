@@ -18,8 +18,21 @@ export class AuthenticationService {
                     localStorage.setItem('currentUser', JSON.stringify(user));
                 }
             });*/
+
+          let values= {
+              name:'Yannick Cuypers',
+              address: {
+                  street:'Bund',
+                  number:'29',
+                  zipcode: '2180',
+                  city:'Ekeren'
+              },
+              bio:'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... ',
+              points:780
+          }
         
-          let user = new User(username,password,true)
+          let user = new User(username,password,values,true)
+          console.log("login user: ",user);
           localStorage.setItem('currentUser', JSON.stringify(user));
     }
  
@@ -27,4 +40,12 @@ export class AuthenticationService {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
+
+    getCurrentUser(){
+        let storageUser=JSON.parse(localStorage.getItem('currentUser'));
+        console.log("currUser :",storageUser);
+        let currUser=new User(storageUser.email,storageUser.password,storageUser.values,true);
+        return currUser;
+    }
+
 }

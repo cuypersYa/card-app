@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../../_services/authentication.service';
+import { User } from '../../_class/user';
+
 
 @Component({
   selector: 'card',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.less']
 })
 export class CardComponent implements OnInit {
+  user : User;
+  constructor(private authService : AuthenticationService) { 
 
-  constructor() { }
+  }
 
   ngOnInit() {
+    this.user=this.authService.getCurrentUser();
   }
 
 }
