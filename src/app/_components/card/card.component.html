@@ -1,27 +1,29 @@
+<div class="row panel">
+    <div class="col-md-12  col-xs-12">
+        <div class="col-md-4">
+            <img src="https://avatars1.githubusercontent.com/u/4170946?v=3&s=460" class="img-thumbnail picture center-block" />
+        </div>
+        <div class="col-md-8">
+            <div class="header">
+                <h1>{{user.values.name}}</h1>
+                <address>
+                    <h4>{{user.values.address.street}} {{user.values.address.number}}, 
+                    {{user.values.address.zipcode}} {{user.values.address.city}}</h4>
+                </address>
+                <span>{{user.values.bio}}</span>
+            </div>
+        </div>
 
-	<div class="row panel">
-		<div class="col-md-12  col-xs-12">
-           <div class="col-md-4">
-               <img src="https://avatars1.githubusercontent.com/u/4170946?v=3&s=460" class="img-thumbnail picture center-block" />
-           </div>
-           <div class="col-md-8">
-               <div class="header">
-                <h1>Lorem Ipsum</h1>
-                <h4>Web Developer</h4>
-                <span>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</span>
-                </div>
-                </div>
-           
-        </div>
-    </div>   
-    
-	<div class="row nav">    
-        <div class="col-md-4"></div>
-        <div class="col-md-8 col-xs-12" style="margin: 0px;padding: 0px;">
-            <!--<div class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> 16</div>
-            <div class="col-md-4 col-xs-4 well"><i class="fa fa-heart-o fa-lg"></i> 14</div>-->
-            <div class="col-md-4 col-xs-4 well">Points: 26 <i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
-        </div>
     </div>
+</div>
 
+<div class="row nav">
+    <div class="col-md-4"></div>
+    <div class="col-md-8 col-xs-12" style="margin: 0px;padding: 0px;">
+        <!--<div class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> 16</div>
+            <div class="col-md-4 col-xs-4 well"><i class="fa fa-heart-o fa-lg"></i> 14</div>-->
+        <div class="col-md-4 col-xs-4 well">Points: {{user.values.points}} <i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
+    </div>
+</div>
+
+{{user |json}}

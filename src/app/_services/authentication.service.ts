@@ -4,7 +4,7 @@ import { User } from '../_class/user'
 
 @Injectable()
 export class AuthenticationService {
-
+  currUser=new User('','',{},false);
   constructor(private http: Http) { }
 
   login(username: string, password: string) {
@@ -31,9 +31,9 @@ export class AuthenticationService {
               points:780
           }
         
-          let user = new User(username,password,values,true)
-          console.log("login user: ",user);
-          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currUser = new User(username,password,values,true)
+          console.log("set user: ",this.currUser);
+          localStorage.setItem('currentUser', JSON.stringify(this.currUser));
     }
  
     logout() {
@@ -42,10 +42,18 @@ export class AuthenticationService {
     }
 
     getCurrentUser(){
-        let storageUser=JSON.parse(localStorage.getItem('currentUser'));
-        console.log("currUser :",storageUser);
-        let currUser=new User(storageUser.email,storageUser.password,storageUser.values,true);
-        return currUser;
+        
+        if (localStorage.getItem('currentUser') !== null){
+            let storageUser=JSON.parse(localStorage.getItem('currentUser'));
+            console.log("currUser :",storageUser);
+            this.currUser=new User(storageUser.email,storageUser.password,storageUser.values,storageUser.loggedin);
+        }
+        
+        return this.currUser;
+    }
+    isLoggedIn(){
+        this.currUser=this.getCurrentUser();
+        return this.currUser.loggedin;
     }
 
 }

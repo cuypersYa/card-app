@@ -11,10 +11,15 @@ import { User } from '../../_class/user';
 export class CardComponent implements OnInit {
   user : User;
   constructor(private authService : AuthenticationService) { 
-
+    this.user=this.authService.getCurrentUser();
   }
 
   ngOnInit() {
+    console.log("curentUser",this.authService.getCurrentUser())
+    console.info("no user",this.user)
+    if (!this.user){
+      console.info("no user",this.user)
+    }
     //this.user=this.authService.getCurrentUser();
   }
 
