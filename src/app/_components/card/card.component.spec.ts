@@ -7,7 +7,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from '../../app.routes';
 import { APP_BASE_HREF } from '@angular/common';
 
-import {AuthenticationService} from '../../_services/authentication.service'
+import { AuthenticationService } from '../../_services/authentication.service';
 import { LoginComponent } from '../login/login.component';
 import { CardComponent } from './card.component';
  

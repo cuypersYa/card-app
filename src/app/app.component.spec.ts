@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './_components/login/login.component';
 import { CardComponent } from './_components/card/card.component';
-import {AuthenticationService} from './_services/authentication.service';
+import { AuthenticationService } from './_services/authentication.service';
 
 
 

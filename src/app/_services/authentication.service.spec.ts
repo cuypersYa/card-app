@@ -47,5 +47,21 @@ describe('AuthenticationService', () => {
       expect(localStorage.getItem('currentUser')).toEqual(null);
   }));
 
+  it('should get the current User and be logged out', inject([AuthenticationService], (service: AuthenticationService) => {
+      const user=service.getCurrentUser();
+      expect(user.loggedin).toEqual(false);
+      expect(user.email).toEqual('');
+      expect(user.password).toEqual('');
+  }));
+  it('should get the current User to be logged in', inject([AuthenticationService], (service: AuthenticationService) => {
+      service.login(username,pass);
+      const user=service.getCurrentUser();
+      expect(user.loggedin).toEqual(true);
+      expect(user.email).toEqual(username);
+      expect(user.password).toEqual(pass);
+      expect(user.values).toEqual(values);
+  }));
+
+
 });
 
