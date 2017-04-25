@@ -18,7 +18,7 @@ describe('AuthenticationService', () => {
                   zipcode: '2000',
                   city:'City'
               },
-              bio:'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... ',
+              bio:'Webapplication developer',
               points:780
           }
   let user=new User(username,pass,values,true);
