@@ -22,10 +22,10 @@ export class AuthenticationService {
           let values= {
               name:'Yannick Cuypers',
               address: {
-                  street:'Bund',
+                  street:'Street',
                   number:'29',
-                  zipcode: '2180',
-                  city:'Ekeren'
+                  zipcode: '2000',
+                  city:'City'
               },
               bio:'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... ',
               points:780

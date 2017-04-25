@@ -8,16 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from '../../_services/authentication.service';
 import { CardComponent } from './card.component';
 
+
 describe('CardComponent', () => {
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
   let authService: AuthenticationService;
   let username="yannick.cuypers@aarixa.be";
   let password="password";
-
-
   
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       providers: [AuthenticationService],
@@ -36,10 +34,8 @@ describe('CardComponent', () => {
     fixture.detectChanges();
   });
 
-  /*it('should create the card component', () => {
-    authService.login(username,password);
-    console.log('localstorage: ',localStorage.getItem('currentUser'))
+  it('should create the card component', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 });
 

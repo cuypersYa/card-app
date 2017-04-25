@@ -5,6 +5,7 @@ import { AuthenticationService } from './authentication.service';
 import { HttpModule } from '@angular/http';
 import { User } from '../_class/user';
 
+
 describe('AuthenticationService', () => {
   // global variable
   let username='test@test.be';
@@ -12,15 +13,16 @@ describe('AuthenticationService', () => {
   let values= {
               name:'Yannick Cuypers',
               address: {
-                  street:'Bund',
+                  street:'Street',
                   number:'29',
-                  zipcode: '2180',
-                  city:'Ekeren'
+                  zipcode: '2000',
+                  city:'City'
               },
               bio:'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... ',
               points:780
           }
   let user=new User(username,pass,values,true);
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({

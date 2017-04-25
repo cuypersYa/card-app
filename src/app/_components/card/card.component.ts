@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user=this.authService.getCurrentUser();
+    //this.user=this.authService.getCurrentUser();
   }
 
 }
