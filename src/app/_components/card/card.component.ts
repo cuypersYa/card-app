@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../_services/authentication.service';
+import { Router  } from '@angular/router';
 import { User } from '../../_class/user';
 
 
@@ -9,17 +10,18 @@ import { User } from '../../_class/user';
   styleUrls: ['./card.component.less']
 })
 export class CardComponent implements OnInit {
-  user : User;
-  constructor(private authService : AuthenticationService) { 
+  user : User
+  constructor(private authService : AuthenticationService, 
+              private router:Router) { 
     this.user=this.authService.getCurrentUser();
+    if (!this.user.loggedin){
+      console.info("no user in card component",this.user)
+      this.router.navigateByUrl('/login')
+    }
   }
 
   ngOnInit() {
-    console.log("curentUser",this.authService.getCurrentUser())
-    console.info("no user",this.user)
-    if (!this.user){
-      console.info("no user",this.user)
-    }
+    
     //this.user=this.authService.getCurrentUser();
   }
 

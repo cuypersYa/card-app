@@ -19,12 +19,15 @@ export class User {
          password: string,
          values: any,
          loggedin: boolean
-         
     ){
         this.email=email;
         this.password=password;
         this.loggedin=loggedin;
-        this.values = values;
+        if(Object.keys(values).length !== 0 && values.constructor === Object){
+            this.values = values;
+        }
+        
+        
         
     }
 }

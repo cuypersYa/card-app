@@ -31,7 +31,7 @@ export class AppRoutingModule {
     if (event.constructor.name === "NavigationEnd" ){
       //router.isActive()
       console.log("is logged in? ",authService.isLoggedIn());
-      if ( router.isActive('login',false) && (!authService.isLoggedIn()) ){
+      if ( router.isActive('login',false) && ( router.isActive('',false) && (!authService.isLoggedIn()) )){
         // check if user is logged in
         router.navigateByUrl('/login');
       }
