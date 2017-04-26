@@ -8,15 +8,22 @@
                     </h1>
                 </div>
                 <div class="col-md-6">
-                    <div class="col-md-6">
-                        <nav *ngIf="showNav">
-                            <a routerLink="/login" routerLinkActive="active">Login</a>
-                            <a routerLink="/card" routerLinkActive="active">Card</a>
-                        </nav>
-                    </div>
-                    <div class="col-md-6">
-                        <button *ngIf="showNav" (click)="logout()">logout</button>
-                    </div>
+                    <nav *ngIf="showNav" class="navbar navbar-default">
+                        <div class="col-md-12">
+                            <ul class="nav navbar-nav ">
+                                <li *ngFor="let link of navigation">
+                                    <a [routerLink]="link.url" routerLinkActive="active">{{link.name}}</a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li style="padding:5px">
+                                    <button (click)="logout()" class="btn btn-primary">logout</button>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </nav>
                 </div>
             </div>
             <router-outlet></router-outlet>

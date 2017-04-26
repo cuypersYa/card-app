@@ -15,7 +15,6 @@ export class CardComponent implements OnInit {
               private router:Router) { 
     this.user=this.authService.getCurrentUser();
     if (!this.user.loggedin){
-      console.info("no user in card component",this.user)
       this.router.navigateByUrl('/login')
     }
   }

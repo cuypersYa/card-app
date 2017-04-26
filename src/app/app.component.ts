@@ -11,6 +11,7 @@ import { AuthenticationService } from './_services/authentication.service';
 export class AppComponent {
   title = 'Card app';
   showNav=true;
+  navigation = [];
   constructor(private router:Router, private location: Location, private authService:AuthenticationService) {
       router.events.subscribe((event)=> {
       console.log("AppComponent event.constructor.name ",event.constructor.name);
@@ -23,6 +24,15 @@ export class AppComponent {
       }
       
     });
+
+    for (var i = 0; i < this.router.config.length; i++) {
+        var routePath:string = this.router.config[i].path;
+        if (routePath !== 'login' && routePath !==''){
+           this.navigation.push({url:'/'+routePath, name:routePath});
+        }
+       console.log(routePath);
+    }
+    console.log("navigation: ",this.navigation);
   }
   logout(){
     console.log("logout")

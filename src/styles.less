@@ -8,7 +8,7 @@
 */
 
 // colors
-@bleu:#0077B2;
+@blue:#0077B2;
 @white:#fff;
 @bg-white:#FDFDFD;
 @gray:#808080;
@@ -22,6 +22,9 @@
 /**
 * CSS
 */
+.right{
+    float: right !important;
+}
 .btn {
   &:focus, &:active {
     .noFocus();
@@ -35,7 +38,7 @@
 .well {
     margin-top:-20px;
     background-color:#007FBD;
-    border:2px solid @bleu;
+    border:2px solid @blue;
     text-align:center;
     cursor:pointer;
     font-size: 25px;
@@ -46,8 +49,8 @@
 
 .well:hover {
     margin-top:-20px;
-    background-color:@bleu;
-    border:2px solid @bleu;
+    background-color:@blue;
+    border:2px solid @blue;
     text-align:center;
     cursor:pointer;
     font-size: 25px;
@@ -106,7 +109,11 @@ background-color: @bg-white;
     width: 33.3%;
    
 }
-
+.navbar-nav li a.active {
+  &:focus, &:active, &:hover {
+    color: @blue ;
+  }
+}
 
 @media (max-width: 767px) {
     .header{

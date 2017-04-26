@@ -3,13 +3,14 @@ import { RouterModule, Routes,Router  } from '@angular/router';
 import { LoginComponent } from './_components/login/login.component';
 import { CardComponent } from './_components/card/card.component';
 import { AuthenticationService } from './_services/authentication.service';
+import { ProfileComponent } from './_components/profile/profile.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login',  component: LoginComponent },
-  { path: 'card', component: CardComponent }
-  /*{ path: 'heroes',     component: HeroesComponent }*/
+  { path: 'card', component: CardComponent },
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({

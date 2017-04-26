@@ -13,13 +13,15 @@ import { LoginComponent } from './_components/login/login.component';
 import { CardComponent } from './_components/card/card.component';
 
 import { AuthenticationService } from './_services/authentication.service';
+import { ProfileComponent } from './_components/profile/profile.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CardComponent
+    CardComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
