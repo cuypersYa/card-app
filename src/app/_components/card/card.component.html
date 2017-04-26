@@ -22,7 +22,12 @@
     <div class="col-md-8 col-xs-12" style="margin: 0px;padding: 0px;">
         <!--<div class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> 16</div>
             <div class="col-md-4 col-xs-4 well"><i class="fa fa-heart-o fa-lg"></i> 14</div>-->
-        <div class="col-md-4 col-xs-4 well">Points: {{user.values.points}} <i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
+        <div class="col-md-6  well">
+
+            <button (click)="doUpdatePoints(-1)" class="col-md-2 btn btn-secondary"><i class="fa fa-minus-square-o" aria-hidden="true"></i></button>
+            <div class="col-md-8 ">Points: {{user.values.points}} </div>
+            <button (click)="doUpdatePoints(1)" class="col-md-2 btn btn-secondary"><i class="fa fa-plus-square-o" aria-hidden="true"></i></button>
+        </div>
     </div>
 </div>
 

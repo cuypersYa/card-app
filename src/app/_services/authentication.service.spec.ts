@@ -19,7 +19,7 @@ describe('AuthenticationService', () => {
                   city:'City'
               },
               bio:'Webapplication developer',
-              points:780
+              points:0
           }
   let user=new User(username,pass,values,true);
 

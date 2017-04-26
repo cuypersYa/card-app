@@ -10,10 +10,25 @@ import { APP_BASE_HREF } from '@angular/common';
 import { AuthenticationService } from '../../_services/authentication.service';
 import { LoginComponent } from '../login/login.component';
 import { CardComponent } from './card.component';
+//import { User } from '../../_class/user';
  
 describe('CardComponent', () => {
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
+  // global variable
+  let username='test@test.be';
+  let pass='pass';
+  let values= {
+              name:'Yannick Cuypers',
+              address: {
+                  street:'Street',
+                  number:'29',
+                  zipcode: '2000',
+                  city:'City'
+              },
+              bio:'Webapplication developer',
+              points:780
+          }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -34,4 +49,19 @@ describe('CardComponent', () => {
   it('should create the card component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create a user', () => {
+    expect(component.user.email).toEqual(username);
+    expect(component.user.password).toEqual(pass);
+    expect(component.user.loggedin).toEqual(true);
+  });
+  it('should add a point to user and remove them', () => {
+      expect(component.user.values.points).toEqual(0);
+      component.doUpdatePoints(10);
+      expect(component.user.values.points).toEqual(10);
+      component.doUpdatePoints(-10);
+      expect(component.user.values.points).toEqual(0);
+  });
+
+ 
 });

@@ -28,11 +28,10 @@ export class AuthenticationService {
                   city:'City'
               },
               bio:'Webapplication developer',
-              points:780
+              points:0
           }
         
           this.currUser = new User(username,password,values,true)
-          console.log("set user: ",this.currUser);
           localStorage.setItem('currentUser', JSON.stringify(this.currUser));
     }
  
@@ -44,7 +43,6 @@ export class AuthenticationService {
     getCurrentUser(){
         if (localStorage.getItem('currentUser') !== null){
             let storageUser=JSON.parse(localStorage.getItem('currentUser'));
-            console.log("currUser :",storageUser);
             this.currUser=new User(storageUser.email,storageUser.password,storageUser.values,storageUser.loggedin);
         }
         return this.currUser;

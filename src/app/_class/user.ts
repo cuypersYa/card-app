@@ -26,8 +26,8 @@ export class User {
         if(Object.keys(values).length !== 0 && values.constructor === Object){
             this.values = values;
         }
-        
-        
-        
     }
+
+   
+
 }

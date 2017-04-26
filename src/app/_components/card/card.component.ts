@@ -22,7 +22,10 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     
-    //this.user=this.authService.getCurrentUser();
   }
+  doUpdatePoints(newPoints){
+    this.user.values.points=this.user.values.points+newPoints;
+  }
+  
 
 }
