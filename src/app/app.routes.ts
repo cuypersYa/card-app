@@ -1,4 +1,4 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes,Router  } from '@angular/router';
 import { LoginComponent } from './_components/login/login.component';
 import { CardComponent } from './_components/card/card.component';

@@ -5,10 +5,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
+
 import { LoginComponent } from './_components/login/login.component';
 import { CardComponent } from './_components/card/card.component';
+import { ProfileComponent } from './_components/profile/profile.component';
+
 import { AuthenticationService } from './_services/authentication.service';
 
 
@@ -17,16 +21,8 @@ describe('AppComponent', () => {
   
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        LoginComponent,
-        CardComponent
-      ],
-      imports : [
-        HttpModule,
-        AppRoutingModule,
-        FormsModule
-      ],
+      declarations: [ AppComponent, LoginComponent, CardComponent, ProfileComponent ],
+      imports : [ HttpModule,  AppRoutingModule, FormsModule ],
       providers: [
       {provide: APP_BASE_HREF, useValue : '/' }, AuthenticationService
       ]

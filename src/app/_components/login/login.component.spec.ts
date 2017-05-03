@@ -10,6 +10,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { AuthenticationService } from '../../_services/authentication.service';
 import { LoginComponent } from './login.component';
 import { CardComponent } from '../card/card.component';
+import { ProfileComponent } from '../profile/profile.component' ;
  
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -18,8 +19,8 @@ describe('LoginComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ AppRoutingModule,HttpModule,FormsModule ],
-      declarations: [ LoginComponent,CardComponent ],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' },AuthenticationService] 
+      declarations: [ LoginComponent,CardComponent, ProfileComponent ],
+      providers: [{provide: APP_BASE_HREF, useValue : '/' }, AuthenticationService] 
     })
     .compileComponents();
   }));

@@ -45,19 +45,12 @@
     padding: 15px;
     border-radius: 0px !important;
     color:@white;
+    &:hover{
+        border-bottom : 2px solid rgba(97, 203, 255, 0.65);
+    }
+    
 }
 
-.well:hover {
-    margin-top:-20px;
-    background-color:@blue;
-    border:2px solid @blue;
-    text-align:center;
-    cursor:pointer;
-    font-size: 25px;
-    padding: 15px;
-    border-radius: 0px !important;
-    border-bottom : 2px solid rgba(97, 203, 255, 0.65);
-}
 
 body {
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -100,15 +93,19 @@ background-color: @bg-white;
     background-color: #007FBE;
     border-color: #adadad;
     width: 33.3%;
+    &:hover {
+        color: #333;
+        background-color: #3D5DE0;
+    }
 }
 
-.btn-style:hover {
+/*.btn-style:hover {
     color: #333;
     background-color: #3D5DE0;
     border-color: #adadad;
     width: 33.3%;
    
-}
+}*/
 
 .navbar-nav li a.active {
   &:focus, &:active, &:hover {

@@ -9,6 +9,7 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { AuthenticationService } from '../../_services/authentication.service';
 import { LoginComponent } from '../login/login.component';
+import { ProfileComponent } from '../profile/profile.component' ;
 import { CardComponent } from './card.component';
 //import { User } from '../../_class/user';
  
@@ -33,7 +34,7 @@ describe('CardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ AppRoutingModule,HttpModule,FormsModule ],
-      declarations: [ LoginComponent,CardComponent ],
+      declarations: [ LoginComponent,CardComponent, ProfileComponent ],
       providers: [{provide: APP_BASE_HREF, useValue : '/' },AuthenticationService] 
 
     })

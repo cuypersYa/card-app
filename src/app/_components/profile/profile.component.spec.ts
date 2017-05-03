@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ProfileComponent } from './profile.component';
+import { LoginComponent } from '../login/login.component';
+import { CardComponent } from '../card/card.component';
+
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
