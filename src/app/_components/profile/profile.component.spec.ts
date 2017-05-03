@@ -2,10 +2,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { AppRoutingModule } from '../../app.routes';
+import { APP_BASE_HREF } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
+import { AuthenticationService } from '../../_services/authentication.service';
 import { ProfileComponent } from './profile.component';
 import { LoginComponent } from '../login/login.component';
 import { CardComponent } from '../card/card.component';
+
+import { MapToIterablePipe } from '../../_pipes/map-to-iterable.pipe';
+
 
 
 describe('ProfileComponent', () => {
@@ -14,10 +22,12 @@ describe('ProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ]
+      imports: [ AppRoutingModule,HttpModule,FormsModule ],
+      declarations: [ LoginComponent,CardComponent, ProfileComponent, MapToIterablePipe ],
+      providers: [{provide: APP_BASE_HREF, useValue : '/' },AuthenticationService] 
     })
     .compileComponents();
-  }));
+  })); 
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProfileComponent);

@@ -1,3 +1,25 @@
 <p>
-  profile works!
+    profile works!
 </p>
+<form>
+    <div *ngFor=" let u of user | mapToIterable">
+        <div *ngIf="u.key != 'values'">
+            1) {{u.key}} : {{u.value}}
+        </div>
+        <div *ngIf="u.key == 'values'">
+            <div *ngFor=" let subu of u.value | mapToIterable">
+                <div *ngIf="subu.key != 'address'">
+                    2) {{subu.key}} : {{subu.value}}
+                </div>
+                <div *ngIf="subu.key== 'address'">
+                    <div *ngFor=" let subsubu of subu.value | mapToIterable">
+                        3) {{subsubu.key}} : {{subsubu.value}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<pre>
+    {{user |json}}
+  </pre>

@@ -11,6 +11,8 @@ import { AuthenticationService } from '../../_services/authentication.service';
 import { LoginComponent } from '../login/login.component';
 import { ProfileComponent } from '../profile/profile.component' ;
 import { CardComponent } from './card.component';
+
+import { MapToIterablePipe } from '../../_pipes/map-to-iterable.pipe';
 //import { User } from '../../_class/user';
  
 describe('CardComponent', () => {
@@ -34,7 +36,7 @@ describe('CardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ AppRoutingModule,HttpModule,FormsModule ],
-      declarations: [ LoginComponent,CardComponent, ProfileComponent ],
+      declarations: [ LoginComponent,CardComponent, ProfileComponent, MapToIterablePipe ],
       providers: [{provide: APP_BASE_HREF, useValue : '/' },AuthenticationService] 
 
     })

@@ -11,6 +11,8 @@ import { AuthenticationService } from '../../_services/authentication.service';
 import { LoginComponent } from './login.component';
 import { CardComponent } from '../card/card.component';
 import { ProfileComponent } from '../profile/profile.component' ;
+
+import { MapToIterablePipe } from '../../_pipes/map-to-iterable.pipe';
  
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -19,7 +21,7 @@ describe('LoginComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ AppRoutingModule,HttpModule,FormsModule ],
-      declarations: [ LoginComponent,CardComponent, ProfileComponent ],
+      declarations: [ LoginComponent, CardComponent, ProfileComponent, MapToIterablePipe ],
       providers: [{provide: APP_BASE_HREF, useValue : '/' }, AuthenticationService] 
     })
     .compileComponents();

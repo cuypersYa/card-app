@@ -14,14 +14,14 @@ import { CardComponent } from './_components/card/card.component';
 import { ProfileComponent } from './_components/profile/profile.component';
 
 import { AuthenticationService } from './_services/authentication.service';
-
+import { MapToIterablePipe } from './_pipes/map-to-iterable.pipe';
 
 
 describe('AppComponent', () => {
   
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppComponent, LoginComponent, CardComponent, ProfileComponent ],
+      declarations: [ AppComponent, LoginComponent, CardComponent, ProfileComponent, MapToIterablePipe ],
       imports : [ HttpModule,  AppRoutingModule, FormsModule ],
       providers: [
       {provide: APP_BASE_HREF, useValue : '/' }, AuthenticationService

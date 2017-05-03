@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-//import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app.routes';
@@ -14,6 +13,8 @@ import { CardComponent } from './_components/card/card.component';
 
 import { AuthenticationService } from './_services/authentication.service';
 import { ProfileComponent } from './_components/profile/profile.component';
+import { MapToIterablePipe } from './_pipes/map-to-iterable.pipe';
+//import { DynamicFormComponent } from './_components/dynamic-form/dynamic-form.component';
 
 
 @NgModule({
@@ -21,11 +22,14 @@ import { ProfileComponent } from './_components/profile/profile.component';
     AppComponent,
     LoginComponent,
     CardComponent,
-    ProfileComponent
+    ProfileComponent,
+    MapToIterablePipe,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     NgbModule.forRoot(),
     AppRoutingModule
