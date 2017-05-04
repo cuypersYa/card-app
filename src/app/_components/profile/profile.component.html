@@ -1,25 +1,25 @@
-<p>
-    profile works!
-</p>
-<form>
-    <div *ngFor=" let u of user | mapToIterable">
-        <div *ngIf="u.key != 'values'">
-            1) {{u.key}} : {{u.value}}
+<h3>Edit your profile</h3>
+<form class="col-md-12" (ngSubmit)="updateCurrentUser()">
+    <div *ngFor=" let item of model" class="row col-md-12 ">
+        <div [ngSwitch]="item.type" class="form-group ">
+            <label for="{{item.key}}" class="col-md-6"> {{item.key}}</label>
+            <input *ngSwitchCase="'boolean'" type="checkbox" name="{{item.key}}" class="col-md-6" [(ngModel)]="item.value" />
+            <input *ngSwitchCase="'number'" type="number" name="{{item.key}}" min="0" class="col-md-6" [(ngModel)]="item.value" />
+            <input *ngSwitchDefault type="text" name="{{item.key}}" class="col-md-6" [(ngModel)]="item.value" />
         </div>
-        <div *ngIf="u.key == 'values'">
-            <div *ngFor=" let subu of u.value | mapToIterable">
-                <div *ngIf="subu.key != 'address'">
-                    2) {{subu.key}} : {{subu.value}}
-                </div>
-                <div *ngIf="subu.key== 'address'">
-                    <div *ngFor=" let subsubu of subu.value | mapToIterable">
-                        3) {{subsubu.key}} : {{subsubu.value}}
-                    </div>
-                </div>
-            </div>
+
+    </div>
+    <div class="row col-md-12">
+        <div class="col-md-8"> </div>
+        <div class="form-group col-md-4">
+            <button type="submit" class="btn btn-def btn-block">Save</button>
         </div>
     </div>
 </form>
+
+
+
 <pre>
-    {{user |json}}
-  </pre>
+    {{ model | json }}
+    {{ user | json }}
+</pre>

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { AuthenticationService } from './_services/authentication.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

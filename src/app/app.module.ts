@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+
+
 import { AppRoutingModule } from './app.routes';
 
 import { AppComponent } from './app.component';
@@ -14,7 +16,7 @@ import { CardComponent } from './_components/card/card.component';
 import { AuthenticationService } from './_services/authentication.service';
 import { ProfileComponent } from './_components/profile/profile.component';
 import { MapToIterablePipe } from './_pipes/map-to-iterable.pipe';
-//import { DynamicFormComponent } from './_components/dynamic-form/dynamic-form.component';
+
 
 
 @NgModule({
@@ -23,8 +25,7 @@ import { MapToIterablePipe } from './_pipes/map-to-iterable.pipe';
     LoginComponent,
     CardComponent,
     ProfileComponent,
-    MapToIterablePipe,
-    DynamicFormComponent
+    MapToIterablePipe
   ],
   imports: [
     BrowserModule,

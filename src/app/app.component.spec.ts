@@ -13,6 +13,7 @@ import { LoginComponent } from './_components/login/login.component';
 import { CardComponent } from './_components/card/card.component';
 import { ProfileComponent } from './_components/profile/profile.component';
 
+
 import { AuthenticationService } from './_services/authentication.service';
 import { MapToIterablePipe } from './_pipes/map-to-iterable.pipe';
 

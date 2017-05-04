@@ -15,16 +15,14 @@ export class MapToIterablePipe implements PipeTransform {
     return Object.keys(value).map(function(key) {
             let pair = {};
             let k = 'key';
-            let v = 'value'
-                pair[k] = key;
-                pair[v] = value[key];
+            let v = 'value';
+            let t = 'type';
+            pair[k] = key;
+            pair[v] = value[key];
+            pair[t] = typeof value[key];
         return pair;
     });
   }
 
-  again(values){
-    let newValues= this.transform(values);
-    console.log("again ",newValues)
-    return newValues;
-  }
+  
 }
