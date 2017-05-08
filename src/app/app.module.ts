@@ -16,6 +16,7 @@ import { CardComponent } from './_components/card/card.component';
 import { AuthenticationService } from './_services/authentication.service';
 import { ProfileComponent } from './_components/profile/profile.component';
 import { MapToIterablePipe } from './_pipes/map-to-iterable.pipe';
+import { ValidateEqualDirective } from './_directive/validate-equal.directive';
 
 
 
@@ -25,7 +26,8 @@ import { MapToIterablePipe } from './_pipes/map-to-iterable.pipe';
     LoginComponent,
     CardComponent,
     ProfileComponent,
-    MapToIterablePipe
+    MapToIterablePipe,
+    ValidateEqualDirective
   ],
   imports: [
     BrowserModule,

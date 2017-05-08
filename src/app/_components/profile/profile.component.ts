@@ -48,6 +48,13 @@ export class ProfileComponent implements OnInit {
     array.forEach(element => {
       console.log("element: ", element);
       if(typeof element.value !== 'object'){
+        if (element.key== 'email' || element.key== 'password'){
+          element['validate']=element.key
+          element.type=element.key
+        }else if (element.type=='boolean'){
+          element.type='checkbox'
+        }
+        element['required']='required'
         this.model.push(element)
       }
     });
