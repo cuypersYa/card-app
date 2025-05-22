@@ -22,7 +22,7 @@
     "@angular/router": "^3.3.1",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.23",
     "@ng2-dynamic-forms/core": "^1.4.8",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "ng2-bootstrap": "^1.6.3",
